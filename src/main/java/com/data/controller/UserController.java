@@ -16,26 +16,26 @@ import com.data.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class UserController {
-	
-	 @Autowired
-	 private UserService userService;
-	 
-	 @Autowired
-	 private UserRepository userRepository;
-	 
-	@PutMapping("/update/{id}")
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         return userService.updateUser(id, updatedUser)
                 .map(user -> ResponseEntity.ok().body(user))
                 .orElse(ResponseEntity.notFound().build());
     }
-	
-	 @GetMapping("/{id}")
-	    public ResponseEntity<User> getById(@PathVariable Long id) {
-	        return userRepository.getUserById(id)
-	                .map(ResponseEntity::ok)
-	                .orElse(ResponseEntity.notFound().build());
-	    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getById(@PathVariable Long id) {
+        return userRepository.getUserById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 }

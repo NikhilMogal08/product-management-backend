@@ -21,7 +21,7 @@ import com.data.service.OrderService;
 
 @RestController
 @RequestMapping("/api/orders")
-@CrossOrigin(origins = "http://localhost:3000") // Adjust the origin as needed
+@CrossOrigin(origins = "*") // Adjust the origin as needed
 public class OrderController {
 
     @Autowired

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/payment")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class PaymentController {
 
     @Autowired

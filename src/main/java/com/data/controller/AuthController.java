@@ -18,10 +18,10 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
-    
+
     @GetMapping("/test")
     public String testing() {
-    	return "Testing";
+        return "Testing";
     }
 
     @PostMapping("/register")
@@ -39,7 +39,7 @@ public class AuthController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
-    
+
     @PostMapping("/send-otp")
     public ResponseEntity<String> sendOtp(@RequestBody Map<String, String> request) {
         String email = request.get("email");
@@ -60,6 +60,5 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Invalid OTP");
         }
     }
-
 
 }

@@ -27,7 +27,7 @@ import org.springframework.http.MediaType;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired
@@ -63,5 +63,3 @@ public class ProductController {
         return productService.getProductById(id);
     }
 }
-
-
