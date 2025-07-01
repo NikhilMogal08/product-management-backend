@@ -35,8 +35,8 @@ public class OrderService {
     @Autowired
     private EmailService emailService;
     
-    @Autowired
-    private SmsService smsService;
+    // @Autowired
+    // private SmsService smsService;
 
     @Transactional
     public String placeOrder(OrderRequest orderRequest) {
